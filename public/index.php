@@ -1,4 +1,6 @@
 <?php
+ini_set('memory_limit', '-1');
+set_time_limit(2000);
 
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;

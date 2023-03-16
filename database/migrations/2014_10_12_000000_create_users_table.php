@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('batch_id', 50);
             $table->string('ref_id', 50)->unique();
-            $table->string('first_name', 50);
-            $table->string('last_name', 50);
-            $table->string('phone_number', 20);
-            $table->string('email', 100)->unique();
+            $table->string('first_name', 50)->nullable();
+            $table->string('last_name', 50)->nullable();
+            $table->string('phone_number', 20)->nullable();
+            $table->string('email', 100)->nullable();
             $table->string('country', 50)->nullable();
             $table->string('state', 50)->nullable();
             $table->string('city', 50)->nullable();

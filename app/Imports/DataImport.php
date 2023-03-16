@@ -12,7 +12,7 @@ use Maatwebsite\Excel\Concerns\WithValidation;
 use Maatwebsite\Excel\Concerns\WithColumnFormatting;
 use PhpOffice\PhpSpreadsheet\Style\NumberFormat;
 
-class DataImport implements ToCollection, WithHeadingRow, WithValidation,WithColumnFormatting
+class DataImport implements ToCollection, WithHeadingRow, WithColumnFormatting
 {
     /**
      * @param array $row
@@ -48,29 +48,6 @@ class DataImport implements ToCollection, WithHeadingRow, WithValidation,WithCol
     {
         return substr(base_convert(sha1(uniqid(mt_rand())), 16, 36), 0, $limit);
     }
-
-
-    public function rules(): array
-    {
-        return [
-            '*.phone_number' => 'nullable|numeric:users',
-            '*.email' => 'nullable|email|unique:users',
-
-        ];
-    }
-
-    public function customValidationMessages()
-    {
-        return [
-            'email.required' => 'email is required.',
-            'email.unique' => 'The email has already been taken.',
-            'phone_number.numeric' => 'The phone number must be a number.'
-
-
-        ];
-    }
-
-    
 
     public function columnFormats(): array
     {
