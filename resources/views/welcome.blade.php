@@ -129,7 +129,7 @@
                 <h4 class="modal-title" id="myModalLabel">Import New Data</h4>
             </div>
             <form class="cmxform form-horizontal " id="import-form">
-            {{ csrf_field() }}
+                @csrf
                 <div class="modal-body">
                     <div class="form">
 
@@ -161,7 +161,7 @@
                 <h4 class="modal-title" id="myModalLabel">Import New Data</h4>
             </div>
             <form class="cmxform form-horizontal" action="{{url('import/edit')}}" enctype="multipart/form-data" method="POST">
-            {{ csrf_field() }}
+                @csrf
                 <div class="modal-body">
                     <div class="form">
 
