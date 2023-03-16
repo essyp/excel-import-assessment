@@ -40,7 +40,6 @@ class DataImport implements ToCollection, WithHeadingRow, WithValidation,WithCol
                 'country' => $row['country'],
                 'gender' => $row['gender'],
                 'marital_status' => $row['marital_status'],
-                'confirmed' => 1,
             ]);
         }
     }
